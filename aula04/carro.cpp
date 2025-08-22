@@ -1,39 +1,40 @@
 #include <iostream>
 #include <string>
-
 using namespace std;
-
 class Carro{
 private:
-    string modelo;
-    string marca;
-    int ano;
+    string marca, modelo;
 public:
     Carro(){
-        modelo = "Desconhecido";
-        marca = "Desconhecida";
-        ano = 0;
+        marca = "desconhecida";
+        modelo = "desconhecido";
     }
-    string getMarca(){ return marca; }
-    string getModelo(){ return modelo; }
-    int getAno(){ return ano; }
-
-    void setModelo(string _modelo){ modelo = _modelo; }
-    void setMarca(string _marca){ marca = _marca; }
-    void setAno(string _ano){ ano = _ano; }
+    string getMarca(){
+        return marca;
+    }
+    string getModelo(){
+        return modelo;
+    }
+    void setMarca(string _marca){
+        marca=_marca;
+    }
+    void setModelo(string _modelo){
+        modelo = _modelo;
+    }
+    void acelerando(){
+        cout << "acelerando...." << endl;
+    }
     void exibirInformacao(){
-        cout << "Modelo: " << modelo << endl;
         cout << "Marca: " << marca << endl;
-        cout << "Ano: " << ano << endl;
+        cout << "Modelo: " << modelo << endl;
     }
 };
 
 int main(){
-    Carro carro_A;
+    Carro carro_A, carro_B;
     carro_A.exibirInformacao();
+    carro_B.setMarca("Fiat");
+    carro_B.setModelo("Argo");
+    carro_B.exibirInformacao();
     return 0;
 }
-
-
-
-
